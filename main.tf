@@ -26,6 +26,6 @@ data "terraform_remote_state" "foo" {
 resource "aws_iam_user" "default" {
   name = "tf-remote-test-${var.workspace}"
   tags = {
-    foo = data.terraform_remote_state.foo.name
+    foo = data.terraform_remote_state.foo.outputs.name
   }
 }
